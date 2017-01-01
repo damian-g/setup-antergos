@@ -1,0 +1,19 @@
+"*":
+  core:
+    disabledPackages: [
+      "vim-mode"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "solarized-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Inconsolata"
+  "exception-reporting":
+    userId: "48b66493-8dfa-49d3-ecf8-2bf4e4f03e47"
+  "git-plus":
+    general:
+      _analyticsUserId: "a92c948f-0093-44f2-a91d-4c8a7f58ced6"
+  welcome:
+    showOnStartup: false
