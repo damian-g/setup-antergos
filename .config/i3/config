@@ -31,8 +31,8 @@ set $workspace03 3 
 set $workspace04 4 
 set $workspace05 5 
 set $workspace06 6 
-set $workspace07 7 
-set $workspace08 8 
+set $workspace07 7 
+set $workspace08 8 
 set $workspace09 9 
 set $workspace10 10 
 
@@ -65,14 +65,17 @@ bindsym $mod+d exec "rofi -show run \
 # Open Terminal
 bindsym $mod+Return exec termite
 
-# Open Atom
-bindsym $mod+Shift+a exec atom
-
 # Open Chromium
 bindsym $mod+Shift+c exec chromium
 
 # Open Mail
-#bindsym $mod+Shift+m exec geary
+bindsym $mod+Shift+m exec thunderbird
+
+# Open Spotify
+bindsym $mod+Shift+s exec spotify
+
+# Open File manager
+bindsym $mod+Shift+f exec nautilis
 
 #######################################################
 #                    i3 Keybindings                   #
@@ -189,9 +192,12 @@ bindsym $mod+Shift+8 move container to workspace $workspace08
 bindsym $mod+Shift+9 move container to workspace $workspace09
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-assign [class="^Geary$"] → "$workspace02"
+assign [class="^Thunderbird$"] → "$workspace02"
 assign [class="^Chromium$"] → "$workspace03"
-assign [class="^Atom$"] → "$workspace04"
+assign [class="^Code$"] → "$workspace04"
+assign [class="^Nautilus$"] → "$workspace05"
+assign [class="^Skype$"] → "$workspace07"
+assign [class="^Slack$"] → "$workspace08"
 assign [class="^Spotify$"] → "$workspace10"
 
 #######################################################
@@ -208,7 +214,7 @@ bar {
 	status_command i3blocks -c ~/.config/i3/i3blocks
 	colors {
 		background          $base02
-		focused_workspace	  $base02   $base02   $base3
+		focused_workspace	$base02   $base02   $base3
 		inactive_workspace  $base02   $base02   $base01
 		active_workspace    $base02   $base02   $base01
 		urgent_workspace    $magenta  $magenta  $base3
@@ -219,7 +225,9 @@ bar {
 #                      Startup                        #
 #######################################################
 
-exec --no-startup-id geary
 exec --no-startup-id chromium
-exec --no-startup-id atom
+exec --no-startup-id code
+exec --no-startup-id slack
+exec --no-startup-id skype
+exec --no-startup-id spotify
 exec --no-startup-id compton -f
