@@ -4,7 +4,7 @@
 #                       Variables                     #
 #######################################################
 
-set $mod Mod1
+set $mod Mod4
 
 # Colors, based on solarized palette: http://ethanschoonover.com/solarized
 set $base03    #002b36
@@ -25,12 +25,12 @@ set $cyan      #2aa198
 set $green     #859900
 
 # Workspaces
-set $workspace01 1 
-set $workspace02 2 
-set $workspace03 3 
-set $workspace04 4 
-set $workspace05 5 
-set $workspace06 6 
+set $workspace01 1 
+set $workspace02 2 
+set $workspace03 3 
+set $workspace04 4  
+set $workspace05 5 
+set $workspace06 6 
 set $workspace07 7 
 set $workspace08 8 
 set $workspace09 9 
@@ -64,18 +64,6 @@ bindsym $mod+d exec "rofi -show run \
 
 # Open Terminal
 bindsym $mod+Return exec termite
-
-# Open Chromium
-bindsym $mod+Shift+c exec chromium
-
-# Open Mail
-bindsym $mod+Shift+m exec thunderbird
-
-# Open Spotify
-bindsym $mod+Shift+s exec spotify
-
-# Open File manager
-bindsym $mod+Shift+f exec nautilis
 
 #######################################################
 #                    i3 Keybindings                   #
@@ -116,7 +104,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+Left exec playerctl previous
 bindsym $mod+Right exec playerctl next
-bindsym $mod+Space exec playerctl play-pause
+bindsym $mod+space exec playerctl play-pause
 
 bindsym XF86MonBrightnessUp exec light -A 10
 bindsym XF86MonBrightnessDown exec light -U 10
@@ -192,13 +180,29 @@ bindsym $mod+Shift+8 move container to workspace $workspace08
 bindsym $mod+Shift+9 move container to workspace $workspace09
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-assign [class="^Thunderbird$"] → "$workspace02"
-assign [class="^Chromium$"] → "$workspace03"
-assign [class="^Code$"] → "$workspace04"
-assign [class="^Nautilus$"] → "$workspace05"
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
+
+set $workspace01 1 
+set $workspace02 2 
+set $workspace03 3 
+set $workspace04 4  
+set $workspace05 5 
+set $workspace06 6 
+set $workspace07 7 
+set $workspace08 8 
+set $workspace09 9 
+set $workspace10 10 
+
+assign [class="^Code$"] → "$workspace01"
+assign [class="^Chromium$"] → "$workspace02"
+assign [class="^Nautilus$"] → "$workspace04"
+assign [class="^Thunderbird$"] → "$workspace06"
 assign [class="^Skype$"] → "$workspace07"
 assign [class="^Slack$"] → "$workspace08"
-assign [class="^Spotify$"] → "$workspace10"
+assign [class="^Riot$"] → "$workspace09"
+
+for_window [class="Spotify"] move to workspace $workspace10
 
 #######################################################
 #                       Theme                         #
@@ -226,8 +230,6 @@ bar {
 #######################################################
 
 exec --no-startup-id chromium
-exec --no-startup-id code
-exec --no-startup-id slack
-exec --no-startup-id skype
 exec --no-startup-id spotify
+exec --no-startup-id thunderbird
 exec --no-startup-id compton -f

@@ -23,6 +23,7 @@ install:
 	yaourt -S --noconfirm community/playerctl
 	yaourt -S --noconfirm aur/skypeforlinux-stable-bin
 	yaourt -S --noconfirm community/riot-desktop
+	yaourt -S --noconfirm arandr
 
 	chsh -s /bin/zsh
 	sudo usermod -aG docker $(USER)
