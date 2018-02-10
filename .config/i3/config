@@ -201,7 +201,6 @@ assign [class="^Thunderbird$"] → "$workspace06"
 assign [class="^Skype$"] → "$workspace07"
 assign [class="^Slack$"] → "$workspace08"
 assign [class="^Riot$"] → "$workspace09"
-
 for_window [class="Spotify"] move to workspace $workspace10
 
 #######################################################
@@ -231,5 +230,6 @@ bar {
 
 exec --no-startup-id chromium
 exec --no-startup-id spotify
+exec --no-startup-id dropbox
 exec --no-startup-id thunderbird
 exec --no-startup-id compton -f
