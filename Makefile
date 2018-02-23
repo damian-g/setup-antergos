@@ -12,18 +12,11 @@ install:
 	yaourt -S --noconfirm community/firefox-developer-edition
 	yaourt -S --noconfirm community/keepassxc
 	yaourt -S --noconfirm community/virtualbox
-	yaourt -S --noconfirm community/i3
-	yaourt -S --noconfirm community/termite
-	yaourt -S --noconfirm aur/nerd-fonts-complete
-	yaourt -S --noconfirm community/ranger
 	yaourt -S --noconfirm aur/oh-my-zsh-git
-	yaourt -S --noconfirm aur/i3lock-fancy-git
-	yaourt -S --noconfirm aur/oh-my-zsh-git
-	yaourt -S --noconfirm extra/feh
-	yaourt -S --noconfirm community/playerctl
-	yaourt -S --noconfirm aur/skypeforlinux-stable-bin
-	yaourt -S --noconfirm community/riot-desktop
-	yaourt -S --noconfirm arandr
-
+	yaourt -S --noconfirm aur/gtk-theme-solarc-git
+	yaourt -S --noconfirm aur/slack-desktop
+	yaourt -S --noconfirm community/guake
+	
 	chsh -s /bin/zsh
 	sudo usermod -aG docker $(USER)
+	sudo systemctl enable docker
