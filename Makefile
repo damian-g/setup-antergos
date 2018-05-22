@@ -16,6 +16,7 @@ install:
 	yaourt -S --noconfirm aur/gtk-theme-solarc-git
 	yaourt -S --noconfirm aur/slack-desktop
 	yaourt -S --noconfirm community/guake
+	yaourt -S --noconfirm community/httping
 	
 	chsh -s /bin/zsh
 	sudo usermod -aG docker $(USER)
